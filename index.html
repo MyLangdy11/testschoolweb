@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Academy</title>
+    <style>
+        @font-face {
+            font-family: 'battambang';
+            src: url('fonts/Battambang.ttf');
+        }
+        @font-face {
+            font-family: 'moul';
+            src: url(fonts/Khmer\ OS\ Moul.ttf);
+        }
+        body {
+            font-family:'battambang', 'Arial, sans-serif';
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            width: 100%;
+            background-color: #253C99;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu-button {
+            display: none;
+            background-color: #253C99;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            overflow-y: auto;
+            height: calc(100vh - 100px);
+            position: fixed;
+            top: 65px;
+            left: 0;
+            transition: transform 0.3s ease-in-out;
+            z-index: 999999;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            color: #253C99;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar ul li.active a {
+            color: #253C99;
+            font-weight: bold;
+        }
+
+        .sidebar ul li a:hover {
+            color: #253C99;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 270px;
+            margin-top: 80px;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            color: #253C99;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #253C99;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .cover {
+            background-image: url('https://hips.hearstapps.com/hmg-prod/images/best-annual-flowers-and-plants-1655932435.jpeg?crop=0.9272976680384089xw:1xh;center,top&resize=1200:*');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .description {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #253C99;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+
+            .sidebar {
+                transform: translateX(-100%);
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .content {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #253C99, #FF5733);
+            padding: 10px 20px;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 99999999;
+        }
+        .titlenav{
+            padding-left: 50px;
+            /* padding-top: 10px; */
+            font-family: 'moul',system-ui;
+        }
+        .navigation .title {
+            font-size: 24px;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            margin-top: -20px;
+            padding-right: 40px;
+        }
+        .language-buttons img {
+            width: 34px;
+            height: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .nav-logo{
+            height:65px;
+        }
+        .nav-logo img{
+            height:700px ;
+        }
+
+        /* grid card */
+        .content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .description h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .description p {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .grid-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid-item img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
+    }
+
+    .grid-item h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .grid-item p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .description h1 {
+        font-size: 1.5rem;
+      }
+
+      .description p {
+        font-size: 0.9rem;
+      }
+
+      .grid-item {
+        padding: 15px;
+      }
+
+      .grid-item img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .grid-item h3 {
+        font-size: 1rem;
+      }
+
+      .grid-item p {
+        font-size: 0.85rem;
+      }
+    }
+        /* end grid card */
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <img class="nav-logo" src="img/Picture2.png" alt="">
+        <div data-en="Samaki Secondary School" data-km="អនុវិទ្យាល័យសាមគ្គី" class="titlenav">Samaki Secondary School</div>
+        <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        <div class="language-buttons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/640px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English" onclick="changeLanguage('en')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg" alt="Khmer" onclick="changeLanguage('km')">
+        </div>
+    </div>
+    <main>
+        <div class="sidebar" id="sidebar">
+            <h2>មាតិកា</h2>
+            <ul>
+                <li><a href="#" onclick="showHome()">ទំព័រដើម</a></li>
+                <li><a href="#" onclick="showLessons('ict')">ស្ថិតិ</a></li>
+                <li><a href="#" onclick="showLessons('fundamental')">បុគ្គលិក</a></li>
+                <li><a href="#" onclick="showLessons('fundamental')">អាសយដ្ឋាន</a></li>
+                <li><a href="library.html">បណ្ណាល័យ</a></li>
+            </ul>
+            <!-- <h2>Lessons</h2>
+            <ul id="lessons-list"> -->
+                <!-- Lessons will be populated here -->
+            <!-- </ul> -->
+        </div>
+        <div class="content" id="content">
+            <div data-en="Samaki Secondary School" data-km="អនុវិទ្យាល័យសាមគ្គី" class="cover">
+                Welcome to ICT Academy
+            </div>
+            <div class="description">
+                <h1 >About Our Students and ICT</h1>
+                <p>
+                    Our students are passionate about technology and innovation. At ICT Academy, we provide the tools and knowledge to help students excel in the ever-evolving world of Information and Communication Technology. Our curriculum is designed to foster creativity, critical thinking, and practical skills.
+                </p>
+            </div>
+            <div class="grid">
+                <div class="grid-item">
+                  <img src="https://cdn-icons-png.freepik.com/512/4196/4196591.png" alt="Expert Instructors Icon">
+                  <h3>Expert Instructors</h3>
+                  <p>Our instructors are industry experts with years of experience in their respective fields.</p>
+                </div>
+                <div class="grid-item">
+                  <img src="https://via.placeholder.com/70" alt="Modern Curriculum Icon">
+                  <h3>Modern Curriculum</h3>
+                  <p>We offer a curriculum that is up-to-date with the latest technological advancements and industry standards.</p>
+                </div>
+                <div class="grid-item">
+                  <img src="https://via.placeholder.com/70" alt="Hands-on Learning Icon">
+                  <h3>Hands-on Learning</h3>
+                  <p>Students engage in practical projects that provide real-world experience and skills.</p>
+                </div>
+                <div class="grid-item">
+                  <img src="https://via.placeholder.com/70" alt="Community Support Icon">
+                  <h3>Community Support</h3>
+                  <p>We foster a supportive community where students can collaborate and grow together.</p>
+                </div>
+              </div>
+        </div>
+    </main>
+    <footer>
+        © 2024 ICT Academy
+    </footer>
+
+    <script>
+        const lessonsData = {
+            ict: [
+                {
+                    title: 'Lesson 1: Introduction to HTML',
+                    content: 'HTML (HyperText Markup Language) is the standard markup language for creating web pages. It is the most basic building block of the Web. HTML describes the structure of a Web page, and it consists of a series of elements which tell the browser how to display the content.',
+                    media: '',
+                },
+                {
+                    title: 'Lesson 2: Introduction to CSS',
+                    content: 'CSS (Cascading Style Sheets) is a stylesheet language used for describing the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.',
+                    media: '',
+                },
+                {
+                    title: 'Lesson 3: Introduction to JavaScript',
+                    content: 'JavaScript is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. It enables interactive web pages and is an essential part of web applications.',
+                    media: '<img src="https://via.placeholder.com/600x400" alt="JavaScript Image">',
+                },
+            ],
+            fundamental: [
+                {
+                    title: 'Lesson 1: Basics of Computer',
+                    content: 'A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. You may already know that you can use a computer to type documents, send email, play games, and browse the Web.',
+                    media: '<img src="https://via.placeholder.com/600x400" alt="Computer Basics Image">',
+                },
+                {
+                    title: 'Lesson 2: Operating Systems',
+                    content: 'An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. The OS is a vital component of the system software in a computer system.',
+                    media: '<video width="600" controls><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">Your browser does not support the video tag.</video>',
+                },
+                {
+                    title: 'Lesson 3: Computer Networks',
+                    content: 'A computer network is a group of computers that use a set of common communication protocols over digital interconnections for the purpose of sharing resources located on or provided by the network nodes.',
+                    media: '',
+                },
+            ]
+        };
+
+        let currentSubject = 'ict';
+        let currentLessonIndex = 0;
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        function showHome() {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <div data-en="Welcome to ICT -SAMAKI School" data-km="ស្វាគមន៍មកកាន់អាយស៊ីធីអនុវិទ្យាល័យសាមគ្គី" class="cover">
+                    Welcome to ICT Academy
+                </div>
+                <div class="description">
+                    <h1>About Our Students and ICT</h1>
+                    <p>
+                        Our students are passionate about technology and innovation. At ICT Academy, we provide the tools and knowledge to help students excel in the ever-evolving world of Information and Communication Technology. Our curriculum is designed to foster creativity, critical thinking, and practical skills.
+                    </p>
+                </div>
+                <div class="grid">
+                    <div class="grid-item">
+                        <h3>Expert Instructors</h3>
+                        <p>Our instructors are industry experts with years of experience in their respective fields.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Modern Curriculum</h3>
+                        <p>We offer a curriculum that is up-to-date with the latest technological advancements and industry standards.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Hands-on Learning</h3>
+                        <p>Students engage in practical projects that provide real-world experience and skills.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Community Support</h3>
+                        <p>We foster a supportive community where students can collaborate and grow together.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showLessons(subject) {
+            currentSubject = subject;
+            currentLessonIndex = 0;
+            const lessonsList = document.getElementById('lessons-list');
+            lessonsList.innerHTML = '';
+
+            lessonsData[subject].forEach((lesson, index) => {
+                const lessonItem = document.createElement('li');
+                lessonItem.classList.add('lesson-item');
+                if (index === 0) {
+                    lessonItem.classList.add('active');
+                }
+                const lessonLink = document.createElement('a');
+                lessonLink.href = '#';
+                lessonLink.textContent = lesson.title;
+                lessonLink.onclick = () => showLesson(index);
+                lessonItem.appendChild(lessonLink);
+                lessonsList.appendChild(lessonItem);
+            });
+
+            showLesson(0);
+        }
+
+        function showLesson(index) {
+            currentLessonIndex = index;
+            const lesson = lessonsData[currentSubject][index];
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+                <h1>${lesson.title}</h1>
+                <div class="fade-in">${lesson.content}</div>
+                <div>${lesson.media}</div>
+            `;
+            contentDiv.innerHTML += `
+                <div class="nav-buttons">
+                    <button onclick="prevLesson()" ${index === 0 ? 'disabled' : ''}>Previous</button>
+                    <button onclick="nextLesson()" ${index === lessonsData[currentSubject].length - 1 ? 'disabled' : ''}>Next</button>
+                </div>
+            `;
+
+            document.querySelectorAll('.lesson-item').forEach((item, idx) => {
+                if (idx === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        function nextLesson() {
+            if (currentLessonIndex < lessonsData[currentSubject].length - 1) {
+                showLesson(currentLessonIndex + 1);
+            }
+        }
+
+        function prevLesson() {
+            if (currentLessonIndex > 0) {
+                showLesson(currentLessonIndex - 1);
+            }
+        }
+
+        // Initialize with home screen
+        showHome();
+
+        // Change languages
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-en]');
+            elements.forEach(element => {
+                element.innerText = element.getAttribute('data-' + lang);
+            });
+        }
+    </script>
+</body>
+
+</html>
