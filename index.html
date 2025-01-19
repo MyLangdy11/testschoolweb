@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICT Academy</title>
+    <title>ICT អនុវិទ្យាល័យសាមគ្គី</title>
     <style>
         @font-face {
             font-family: 'battambang';
-            src: url('fonts/Battambang.ttf');
+            src: url('fonts/KantumruyPro-VariableFont_wght.ttf');
         }
 
         @font-face {
@@ -79,8 +79,13 @@
         .sidebar ul li a {
             text-decoration: none;
             color: #333;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: color 0.3s;
+            /* font-weight: bold; */
+        }
+        .sidebar ul li:hover{
+            background-color: #b7b9c2;
+            cursor: pointer;
         }
 
         .sidebar ul li.active a {
@@ -120,8 +125,10 @@
         }
 
         .cover {
-            background-image: url('https://hips.hearstapps.com/hmg-prod/images/best-annual-flowers-and-plants-1655932435.jpeg?crop=0.9272976680384089xw:1xh;center,top&resize=1200:*');
+            background-image: url('https://t4.ftcdn.net/jpg/04/23/54/45/360_F_423544558_pjEfeuRZ7NznUnprhbzjamraY4Jhutoa.jpg');
+            /* background-image: url('https://hips.hearstapps.com/hmg-prod/images/best-annual-flowers-and-plants-1655932435.jpeg?crop=0.9272976680384089xw:1xh;center,top&resize=1200:*'); */
             background-size: cover;
+            font-family: 'battambang';
             background-position: center;
             height: 400px;
             display: flex;
@@ -173,7 +180,7 @@
                 transform: translateX(-100%);
                 width: 100%;
                 max-width: 300px;
-                margin-top: 20px;
+                /* margin-top: 20px; */
             }
 
             .content {
@@ -286,7 +293,7 @@
         }
 
         .grid-item h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #333;
             margin-bottom: 10px;
         }
@@ -300,9 +307,10 @@
 </head>
 
 <body>
+    <header id="header"></header>
     <div class="navigation">
         <img class="nav-logo" src="img/Picture2.png" alt="">
-        <div data-en="Samaki Secondary School" data-km="អនុវិទ្យាល័យសាមគ្គី" class="titlenav">Samaki Secondary School
+        <div data-en="Samaki Secondary School" data-km="អនុវិទ្យាល័យសាមគ្គី" class="titlenav">អនុវិទ្យាល័យសាមគ្គី
         </div>
         <button class="menu-button" onclick="toggleSidebar()">☰</button>
         <div class="language-buttons">
@@ -317,7 +325,7 @@
             <h2>មាតិកា</h2>
             <ul>
                 <li><a href="#" onclick="showHome()">ទំព័រដើម</a></li>
-                <li><a href="#" onclick="showLessons('ict')">ស្ថិតិ</a></li>
+                <li><a href="#statis">ស្ថិតិ</a></li>
                 <li><a href="#" onclick="showLessons('fundamental')">បុគ្គលិក</a></li>
                 <li><a href="#" onclick="showLessons('fundamental')">អាសយដ្ឋាន</a></li>
                 <li><a href="library.html">បណ្ណាល័យ</a></li>
@@ -325,7 +333,7 @@
         </div>
         <div class="content" id="content">
             <div data-en="Samaki Secondary School" data-km="អនុវិទ្យាល័យសាមគ្គី" class="cover">
-                Welcome to ICT Academy
+                សូមស្វាគមន៍មកកាន់អនុវិទ្យាល័យសាមគ្គី
             </div>
             <div class="description">
                 <h1 data-en="Welcome to Samaki Secondary School" data-km="អនុវិទ្យាល័យសាមគ្គី">
@@ -333,17 +341,17 @@
                 <p data-en="Samaki Secondary School is located along National Road 57-7, in Chamkar Chek Village, Sung Commune, Samlot District, Battambang Province. The school is approximately 15 kilometers away from the center of Samlot District.
 
                 With the rapid growth of technology, sharing and receiving information has become much easier and more accessible. In this context, Samaki Secondary School has joined the effort to embrace digital platforms by creating this website. This website is designed to provide you with important information about the school, activities, and programs."
-                    data-km="ស្វាគមន៍មកកាន់សាលាអនុវិទ្យាល័យសាមគ្គី
-                សាលាអនុវិទ្យាល័យសាមគ្គី មានទីតាំងស្ថិតនៅតាមបណ្ដោយផ្លូវជាតិលេខ ៥៧-៧ ភូមិចំការចេក ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង ចម្ងាយប្រមាណ១៥គីឡូម៉ែត្រពីទីរួមស្រុកសំឡូត។ ដោយបច្ចេកវិទ្យាបានរីកចម្រើនយ៉ាងខ្លាំង ការផ្ដល់ព័ត៌មាន និងទទួលព័ត៌មានមានភាពទូលំទូលាយជាខ្លាំង ក្នុងនោះ អនុវិទ្យាល័យសាមគ្គី ក៏បានចួលរួមចំណែកក្នុងការប្រើប្រាស់ និងបង្កើតឌីជីថលតាមរយៈវេបសាយមួយនេះសម្រាប់លោកអ្នកចូលមើលព័ត៌មាននានាអំពីសាលា។">
-                    ស្វាគមន៍មកកាន់សាលាអនុវិទ្យាល័យសាមគ្គី
+                    data-km="សាលាអនុវិទ្យាល័យសាមគ្គី មានទីតាំងស្ថិតនៅតាមបណ្ដោយផ្លូវជាតិលេខ ៥៧-៧ ភូមិចំការចេក ឃុំស៊ុង ស្រុកសំឡូត
+                    ខេត្តបាត់ដំបង ចម្ងាយប្រមាណ១៥គីឡូម៉ែត្រពីទីរួមស្រុកសំឡូត។ ការរីកចម្រើននៃបច្ចេកវិទ្យាបានផ្លាស់ប្តូរបរិបទនៃជីវិតរស់នៅប្រចាំថ្ងៃរបស់មនុស្សជាច្រើន។ ជាក់ស្ដែង ការផ្សព្វផ្សាយព័ត៌មាន និងការទទួលព័ត៌មានក្លាយជារឿងងាយស្រួល មានល្បឿនលឿន និងទូលំទូលាយ ដោយសារបច្ចេកវិទ្យាឌីជីថល។ ក្នុងបរិបទនេះ សាលាអនុវិទ្យាល័យសាមគ្គីក៏បានចូលរួមក្នុងការប្រើប្រាស់បច្ចេកវិទ្យាឌីជីថល និងបង្កើតវេបសាយនេះឡើងសម្រាប់ផ្តល់ព័ត៌មាន និងអនុវត្តសេវាកម្មផ្សេងៗដែលពាក់ព័ន្ធនឹងសាលារៀនរបស់យើង។ សម្រាប់ព័ត៌មានផ្សេងៗបន្ថែមសូមទំនាក់ទំនងមក៖<br>
+                    📞លោក <b>កែវ ប៊ុនធឿន</b> នាយក 015 705 493<br>
+                    📞លោក <b>ទូច សុខខេង</b> នាយករង 088 444 6748">
                     សាលាអនុវិទ្យាល័យសាមគ្គី មានទីតាំងស្ថិតនៅតាមបណ្ដោយផ្លូវជាតិលេខ ៥៧-៧ ភូមិចំការចេក ឃុំស៊ុង ស្រុកសំឡូត
-                    ខេត្តបាត់ដំបង ចម្ងាយប្រមាណ១៥គីឡូម៉ែត្រពីទីរួមស្រុកសំឡូត។ ដោយបច្ចេកវិទ្យាបានរីកចម្រើនយ៉ាងខ្លាំង
-                    ការផ្ដល់ព័ត៌មាន និងទទួលព័ត៌មានមានភាពទូលំទូលាយជាខ្លាំង ក្នុងនោះ អនុវិទ្យាល័យសាមគ្គី
-                    ក៏បានចួលរួមចំណែកក្នុងការប្រើប្រាស់
-                    និងបង្កើតឌីជីថលតាមរយៈវេបសាយមួយនេះសម្រាប់លោកអ្នកចូលមើលព័ត៌មាននានាអំពីសាលា។
+                    ខេត្តបាត់ដំបង ចម្ងាយប្រមាណ១៥គីឡូម៉ែត្រពីទីរួមស្រុកសំឡូត។ ការរីកចម្រើននៃបច្ចេកវិទ្យាបានផ្លាស់ប្តូរបរិបទនៃជីវិតរស់នៅប្រចាំថ្ងៃរបស់មនុស្សជាច្រើន។ ជាក់ស្ដែង ការផ្សព្វផ្សាយព័ត៌មាន និងការទទួលព័ត៌មានក្លាយជារឿងងាយស្រួល មានល្បឿនលឿន និងទូលំទូលាយ ដោយសារបច្ចេកវិទ្យាឌីជីថល។ ក្នុងបរិបទនេះ សាលាអនុវិទ្យាល័យសាមគ្គីក៏បានចូលរួមក្នុងការប្រើប្រាស់បច្ចេកវិទ្យាឌីជីថល និងបង្កើតវេបសាយនេះឡើងសម្រាប់ផ្តល់ព័ត៌មាន និងអនុវត្តសេវាកម្មផ្សេងៗដែលពាក់ព័ន្ធនឹងសាលារៀនរបស់យើង។ សម្រាប់ព័ត៌មានផ្សេងៗបន្ថែមសូមទំនាក់ទំនងមក៖<br>
+                    📞លោក <b>កែវ ប៊ុនធឿន</b> នាយក 015 705 493<br>
+                    📞លោក <b>ទូច សុខខេង</b> នាយករង 088 444 6748
                 </p>
             </div>
-            <div class="grid">
+            <div id="statis" class="grid">
                 <div class="grid-item">
                     <img src="https://cdn-icons-png.freepik.com/512/4196/4196591.png" alt="Expert Instructors Icon">
                     <h3 data-en="15" data-km="១៥ នាក់">១៥ នាក់</h3>
@@ -416,6 +424,7 @@
             });
         }
     </script>
+    <script src="script/animationscroll.js"></script>
 </body>
 
 </html>
