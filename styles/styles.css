@@ -1,0 +1,344 @@
+@font-face {
+    font-family: 'battambang';
+    src: url('../fonts/KantumruyPro-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'moul';
+    src: url('../fonts/Khmer\ OS\ Moul.ttf');
+}
+
+body {
+    font-family: 'battambang', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header {
+    width: 100%;
+    background-color: #253C99;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-button {
+    display: none;
+    background-color: #253C99;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+    position: fixed;
+    top: 85px;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 999999;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    color: #253C99;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    /* font-weight: bold; */
+}
+
+.sidebar ul li:hover {
+    background-color: #b7b9c2;
+    cursor: pointer;
+}
+
+.sidebar ul li.active a {
+    color: #253C99;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: #253C99;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 220px;
+    margin-top: 80px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: #253C99;
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+footer {
+    width: 100%;
+    background-color: #253C99;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+}
+
+.cover {
+    background-image: url('https://t4.ftcdn.net/jpg/04/23/54/45/360_F_423544558_pjEfeuRZ7NznUnprhbzjamraY4Jhutoa.jpg');
+    /* background-image: url('https://hips.hearstapps.com/hmg-prod/images/best-annual-flowers-and-plants-1655932435.jpeg?crop=0.9272976680384089xw:1xh;center,top&resize=1200:*'); */
+    background-size: cover;
+    font-family: 'battambang';
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.description {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    background-color: #253C99;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.nav-buttons button:disabled {
+    background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        max-width: 300px;
+        /* margin-top: 20px; */
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #253C99, #FF5733);
+    padding: 10px 20px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.titlenav {
+    font-family: 'moul', system-ui;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.language-buttons img {
+    width: 34px;
+    height: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .titlenav {
+        font-size: 1.2rem;
+    }
+
+    .nav-logo img {
+        height: 40px;
+    }
+
+    .language-buttons img {
+        width: 28px;
+        height: 20px;
+    }
+}
+
+.nav-logo {
+    height: 65px;
+}
+
+.nav-logo img {
+    height: 700px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grid-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.grid-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom:7px;
+}
+
+.grid-item h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+/* Organization support */
+.orgsupport {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    max-width: 100%;
+    margin-left: 200px;
+}
+
+.org-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.org-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.org-container img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .org-title {
+        font-size: 1.2rem;
+    }
+    .orgsupport{
+        margin-left: auto;
+    }
+}
+/* End organization support */
