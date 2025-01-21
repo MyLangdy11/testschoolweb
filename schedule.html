@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Schedule - Card View</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>កាលវិភាគសិក្សារបស់សិស្សឆ្នាំសិក្សា២០២៤-២០២៥</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'battambang',Arial, sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -147,18 +148,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>Student Schedule - Card View</h1>
+    <h1>កាលវិភាគសិក្សារបស់សិស្សឆ្នាំសិក្សា២០២៤-២០២៥</h1>
     <div class="dropdown">
-      <label for="class-select">Select Class:</label>
+      <label for="class-select">ជ្រើសរើសថ្នាក់:</label>
       <select id="class-select">
         <option value="" selected disabled>Choose a class</option>
-        <option value="9A">Grade 9A</option>
-        <option value="9C">Grade 9C</option>
-        <option value="10B">Grade 10B</option>
+        <option value="9A">ថ្នាក់ទី ៩ក</option>
+        <option value="9C">ថ្នាក់ទី ៩ខ</option>
+        <option value="10B">ថ្នាក់ទី ៩គ</option>
       </select>
     </div>
 
-    <p class="welcome-message" id="welcome-message">Welcome! Please select a class from the dropdown above to view the schedule.</p>
+    <p class="welcome-message" id="welcome-message">ស្វាគមន៍! សូមជ្រើសរើសថ្នាក់ណាមួយក្នុងប្រអប់ជ្រើសរើសដើម្បីបង្ហាញកាលវិភាគសិក្សារបស់ថ្នាក់ណាមួយ!</p>
 
     <div class="card-container" id="card-container">
       <!-- Cards will be dynamically displayed here -->
