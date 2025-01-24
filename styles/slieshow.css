@@ -23,14 +23,14 @@
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
 }
 
 .slide-title {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -41,8 +41,8 @@
 }
 
 .text-section {
-    padding: 20px;
     color: #333;
+    text-align: center;
 }
 
 .text-section h2 {
@@ -66,12 +66,12 @@
 
     .text-section {
         flex: 1;
-        padding: 10px 40px;
-        margin-left: 200px;
+        /* padding: 10px 40px; */
+        /* margin-left: 200px; */
     }
 
     .slide-title {
-        display: none; /* Hide title overlay on desktop */
+        display: flex; /* Hide title overlay on desktop */
     }
 }
 
@@ -87,4 +87,5 @@
         padding: 10px;
         text-align: center;
     }
+    
 }
