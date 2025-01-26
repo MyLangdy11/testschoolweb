@@ -1,18 +1,19 @@
 .chart-container {
     position: relative;
     align-items: right;
-    max-width: 900px;
+    max-width: 520px;
     height: auto;
     background: #fff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 250px;
+    /* margin-left: 250px; */
+    margin-left: 35%;
     justify-items: center;
   }
   @media (max-width: 768px) {
     .chart-container{
-        margin-left: 0;
+        margin-left: 0%;
     }
   }
   canvas {

@@ -32,6 +32,7 @@
     position: absolute;
     bottom: 20%;
     left: 50%;
+    width: 80%;
     transform: translateX(-50%);
     color: white;
     font-size: 1.5rem;

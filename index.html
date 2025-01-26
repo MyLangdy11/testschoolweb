@@ -9,9 +9,13 @@
     <link rel="stylesheet" href="styles/graph.css">
     <link rel="stylesheet" href="styles/slieshow.css">
     <link rel="stylesheet" href="styles/teachercard.css">
+    <link rel="stylesheet" href="styles/buttonsocial.css">
 </head>
 
 <body>
+    <div class="motto">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDtD5u7MdJNFAQj8ZNnzzWabFjsvydB9JhDfd7uLLLcCTGzVYdt59rVBsusE9tY-jheLuIMoyQX4G44PNT-YyY6ISeENxGccGp5Qj3W4XIXRm1mgfZrtz8eKLGu65F8y2rDWLLmHo3x7Er2jJxs6g4MD7VuUaU1wamzA_0SNYDk1bZhlLhtkelCxOpyPzC/s320/tra.png" alt="">
+    </div>
     <header id="header"></header>
     <div class="navigation">
         <img class="nav-logo" src="img/Picture2.png" alt="">
@@ -31,9 +35,10 @@
             <ul>
                 <li><a href="#" onclick="showHome()">ទំព័រដើម</a></li>
                 <li><a href="#statis">ស្ថិតិ</a></li>
-                <li><a href="schedule.html">កាលវិភាគសិក្សារបស់សិស្សឆ្នាំសិក្សា២០២៤-២៥</a></li>
+                <li><a href="schedule.html">កាលវិភាគសិក្សារបស់សិស្ស</a></li>
                 <li><a href="#" onclick="showLessons('fundamental')">អាសយដ្ឋាន</a></li>
                 <li><a href="library.html">បណ្ណាល័យ</a></li>
+                <button class="menu-button-close" onclick="toggleSidebar()">បិទ</button>
             </ul>
         </div>
         <div class="content" id="content">
@@ -61,8 +66,6 @@
             <!-- Text Section -->
             <div class="text-section">
                 <h2 data-en="Congratulations on the new academic year 2024-2025" data-km="អបអរសាទរបវរសនកាលឆ្នាំសិក្សាថ្មី ២០២៤-២០២៥">អបអរសាទរបវរសនកាលឆ្នាំសិក្សាថ្មី ២០២៤-២០២៥</h2>
-                <!-- <h2>២០២៤-២០២៥</h2> -->
-                <!-- <p>អនុវិទ្យាល័យសាមគ្គីកំពុងបណ្ដុះបណ្ដាលសិស្ស</p> -->
             </div>
              <!-- End slide show -->
             <div class="description">
@@ -93,64 +96,55 @@ With the rapid development of technology, people's daily lives have changed sign
             </div>
             <div id="statis" class="grid">
                 <div class="grid-item">
-                    <img src="https://cdn-icons-png.freepik.com/512/4196/4196591.png" alt="Expert Instructors Icon">
-                    <h3 data-en="15" data-km="១៥ នាក់">១៥ នាក់</h3>
-                    <p data-en="Total Teachers" data-km="គ្រូបង្រៀនសរុប">គ្រូបង្រៀនសរុប</p>
+                    <img src="https://cdn-icons-gif.flaticon.com/17428/17428653.gif" alt="Expert Instructors Icon">
+                    <h3 data-en="Total teachers 15" data-km="គ្រូបង្រៀនសរុប ១៥ នាក់">គ្រូបង្រៀនសរុប ១៥ នាក់</h3>
+                    <!-- <p data-en="Total Teachers" data-km="គ្រូបង្រៀនសរុប">គ្រូបង្រៀនសរុប</p> -->
                 </div>
                 <div class="grid-item">
-                    <img src="https://cdn4.iconfinder.com/data/icons/school-education-3/256/Colleagues-512.png"
+                    <img src="https://cdn-icons-gif.flaticon.com/11545/11545387.gif"
                         alt="Modern Curriculum Icon">
-                    <h3 data-en="489" data-km="៤៨៩ នាក់">សិស្សសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥ ៤៨៩ នាក់</h3>
-                    <p data-en="Total Students (Academic year 2024-2025)" data-km="សិស្សសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥">
-                        សិស្សសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥</p>
+                    <h3 data-en="Total Students 489" data-km="សិស្សសរុប ៤៨៩ នាក់">សិស្សសរុប ៤៨៩ នាក់</h3>
+                    <!-- <p data-en="Total Students (Academic year 2024-2025)" data-km="សិស្សសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥"> -->
+                        <!-- សិស្សសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥</p> -->
                 </div>
                 <div class="grid-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3584/3584419.png" alt="Hands-on Learning Icon">
-                    <h3 data-en="200" data-km="២០០ នាក់">២០០ នាក់</h3>
-                    <p data-en="Total Female Students" data-km="សិស្សភេទស្រីសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥">
-                        សិស្សភេទស្រីសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥</p>
-                </div>
-
-                <div class="grid-item">
-                    <img src="https://cdn-icons-png.freepik.com/512/1263/1263712.png" alt="Community Support Icon">
-                    <h3 data-en="03" data-km="០៣ នាក់">៣ នាក់</h3>
-                    <p data-en="Students with physical disabilities" data-km="សិស្សខ្សោយកាយសម្បទារ/ពិការអវៈយវៈ">
-                        សិស្សខ្សោយកាយសម្បទារ/ពិការអវៈយវៈ</p>
+                    <img src="https://cdn-icons-gif.flaticon.com/16675/16675754.gif" alt="Hands-on Learning Icon">
+                    <h3 data-en="Total Female Students 200" data-km="សិស្សភេទស្រីសរុប ២០០ នាក់">សិស្សភេទស្រីសរុប ២០០ នាក់</h3>
+                    <!-- <p data-en="Total Female Students" data-km="សិស្សភេទស្រីសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥"> -->
+                        <!-- សិស្សភេទស្រីសរុបក្នុងឆ្នាំសិក្សា២០២៤-២០២៥</p> -->
                 </div>
                 <div class="grid-item">
-                    <img src="https://w7.pngwing.com/pngs/34/843/png-transparent-logo-glasses-visual-perception-low-vision-brand-visual-impairment-text-trademark-logo-thumbnail.png"
-                        alt="Community Support Icon">
-                    <h3 data-en="01" data-km="០១ នាក់">១ នាក់</h3>
-                    <p data-en="Student with visual impairment" data-km="សិស្សខ្សោយគំហើញ (ភ្នែក)">សិស្សខ្សោយគំហើញ
-                        (ភ្នែក)</p>
+                  <img src="https://cdn-icons-gif.flaticon.com/17428/17428678.gif" alt="Community Support Icon">
+                  <h3 data-en="Total Buildings 2" data-km="អគារសិក្សា ២ ខ្នង">អគារសិក្សា ២ ខ្នង</h3>
+                  <!-- <p data-en="Total classrooms" data-km="ថ្នាក់រៀនសរុប">ថ្នាក់រៀនសរុប</p> -->
+              </div>
+                <div class="grid-item">
+                    <img src="https://cdn-icons-gif.flaticon.com/12146/12146142.gif" alt="Community Support Icon">
+                    <h3 data-en="Total Classrooms 9" data-km="បន្ទប់រៀនសរុប ៩ បន្ទប់">បន្ទប់រៀនសរុប ៩ បន្ទប់</h3>
+                    <!-- <p data-en="Total classrooms" data-km="ថ្នាក់រៀនសរុប">ថ្នាក់រៀនសរុប</p> -->
                 </div>
                 <div class="grid-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3218/3218775.png" alt="Community Support Icon">
-                    <h3 data-en="09 Rooms" data-km="៩ បន្ទប់">៩ បន្ទប់</h3>
-                    <p data-en="Total classrooms" data-km="ថ្នាក់រៀនសរុប">ថ្នាក់រៀនសរុប</p>
+                    <img src="https://cdn-icons-gif.flaticon.com/12743/12743787.gif" alt="Community Support Icon">
+                    <h3 data-en="Library 1" data-km="បណ្ណាល័យ ១ បន្ទប់">បណ្ណាល័យ ១ បន្ទប់</h3>
+                    <!-- <p data-en="Library" data-km="បណ្ណាល័យ">បណ្ណាល័យ</p> -->
                 </div>
                 <div class="grid-item">
-                    <img src="https://cdn-icons-png.flaticon.com/512/10076/10076813.png" alt="Community Support Icon">
-                    <h3 data-en="01 Room" data-km="០១ បន្ទប់">១ បន្ទប់</h3>
-                    <p data-en="Library" data-km="បណ្ណាល័យ">បណ្ណាល័យ</p>
-                </div>
-                <div class="grid-item">
-                    <img src="https://cdn-icons-png.freepik.com/512/7079/7079591.png" alt="Community Support Icon">
-                    <h3 data-en="01 Room" data-km="០១ បន្ទប់">០១ បន្ទប់</h3>
-                    <p data-en="Administrative office" data-km="ទីចាត់ការ">ទីចាត់ការ</p>
+                    <img src="https://media.lordicon.com/icons/wired/flat/1731-home-office.gif" alt="Community Support Icon">
+                    <h3 data-en="Administative office 1" data-km="បន្ទប់ទីចាត់ការ ១ បន្ទប់">បន្ទប់ទីចាត់ការ ១ បន្ទប់</h3>
+                    <!-- <p data-en="Administrative office" data-km="ទីចាត់ការ">ទីចាត់ការ</p> -->
                 </div>
                 <div class="grid-item">
                     <img src="https://www.shutterstock.com/image-vector/restroom-vector-sign-600nw-1222227385.jpg"
                         alt="Community Support Icon">
-                    <h3 data-en="04 Rooms" data-km="០៤ បន្ទប់">៤ បន្ទប់</h3>
-                    <p data-en="Total restrooms" data-km="បន្ទប់ទឹក គ្រូនិងសិស្ស">បន្ទប់ទឹក គ្រូនិងសិស្ស</p>
+                    <h3 data-en="Total Restrooms 04" data-km="បន្ទប់ទឹកសរុប ០៤ បន្ទប់">បន្ទប់ទឹកសរុប ៤ បន្ទប់</h3>
+                    <!-- <p data-en="Total restrooms" data-km="បន្ទប់ទឹក គ្រូនិងសិស្ស">បន្ទប់ទឹក គ្រូនិងសិស្ស</p> -->
                 </div>
             </div>
         </div>
     </main>
     <!-- graph of total students -->
 <!-- Teacher card -->
-    <h3>គណៈគ្រប់គ្រង និងបុគ្គលិក</h3>
+ <h3 class="staff">គណៈគ្រប់គ្រង និងបុគ្គលិក</h3>
 <div class="container-teachercard">
     <div class="cards-wrapper">
       <div class="card">
@@ -279,6 +273,7 @@ With the rapid development of technology, people's daily lives have changed sign
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script/graph.js"></script>
     <!-- end graph -->
+     <!-- Organization support -->
     <div class="orgsupport">
         <div class="org-title">
             អង្គការផ្ដល់ជំនួយអភិវឌ្ឍគម្រោងនានានៅសាលាអនុវិទ្យាល័យសាមគ្គី
@@ -291,8 +286,31 @@ With the rapid development of technology, people's daily lives have changed sign
             <img src="https://www.khencambodia.org/uploads/8/5/2/8/85284128/khen-logo-800px_2.png" alt="">
         </div>
     </div>
+    <!-- end organization support -->
+     <!-- link social -->
+      <div class="container-buttonlinkLink">
+        <!-- Buttonlink 1 -->
+        <div class="buttonlink" onclick="window.open('https://www.facebook.com/p/%E1%9E%A2%E1%9E%93%E1%9E%BB%E1%9E%9C%E1%9E%B7%E1%9E%91%E1%9F%92%E1%9E%99%E1%9E%B6%E1%9E%9B%E1%9F%90%E1%9E%99-%E1%9E%9F%E1%9E%B6%E1%9E%98%E1%9E%82%E1%9F%92%E1%9E%82%E1%9E%B8-100087386084479', '_blank')">
+            <img src="https://static.vecteezy.com/system/resources/previews/018/930/698/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" alt="Logo 1">
+            <div class="text">ហ្វេសប៊ុកផេក អនុវិទ្យាល័យសាមគ្គី</div>
+            <div class="arrow">›</div>
+        </div>
+        <!-- Buttonlink 2 -->
+        <div class="buttonlink" onclick="window.open('https://sala.moeys.gov.kh/kh/sala/samaki/home', '_blank')">
+            <img src="https://api.weteka.org/public/orgs/63fc7c5751508ff62e6ce857/images/287ea2c8-265d-4c3f-926b-8bb1c53701bd.png" alt="Logo 2">
+            <div class="text">បណ្ណាល័យសាលាឌីជីថល</div>
+            <div class="arrow">›</div>
+        </div>
+        <!-- Buttonlink 3 -->
+        <div class="buttonlink" onclick="window.open('https://cdp.moeys.gov.kh', '_blank')">
+            <img src="https://ugc.production.linktr.ee/b56397bc-5b03-490d-ac7e-5b777db857cf_photo.png?io=true&size=avatar-v3_0" alt="Logo 3">
+            <div class="text">ថ្នាលអភិវឌ្ឍសមត្ថភាពក្រសួងអប់រំ</div>
+            <div class="arrow">›</div>
+        </div>
+    </div>
+      <!-- end link social -->
     <footer>
-        © 2024 ICT Academy
+        © 2025 ICT Club
     </footer>
 
     <script>

@@ -1,0 +1,54 @@
+.container-buttonlinkLink {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-left: 255px;
+}
+
+.buttonlink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.buttonlink:hover {
+    transform: scale(1.03);
+}
+
+.buttonlink img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.buttonlink .text {
+    flex: 1;
+    margin-left: 15px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.buttonlink .arrow {
+    font-size: 18px;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-buttonlinkLink {
+        flex-direction: column;
+        margin-left: 25px;
+        
+    }
+}
