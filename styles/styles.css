@@ -21,6 +21,7 @@ body {
     .motto{
         display: block;
         height: 130px;
+        background: linear-gradient(to right, #253C99, #FF5733);
     }
     .motto img{
         height: 120px;
